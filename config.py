@@ -21,7 +21,7 @@ class TrainGlobalConfig:
     lr = 1e-3
 
 
-    root_path = "/home/koga/dataset/BRATS2018/Train"
+    root_path = "~/dataset/BRATS2018/Train"
     # -------------------
     verbose = True
     verbose_step = 1
