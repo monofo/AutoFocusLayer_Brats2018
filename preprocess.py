@@ -10,13 +10,14 @@ import os
 import numpy as np
 import nibabel as nib
 # from utils import Parser
+from config import TrainGlobalConfig
 
 # args = Parser()
 modalities = ('flair', 't1ce', 't1', 't2')
 
 
 train_set = {
-        'root': '/home/koga/dataset/BRATS2018/Train',
+        'root': TrainGlobalConfig.root_path,
         'flist': 'all.txt',
         }
 

@@ -7,7 +7,9 @@ import os
 from sklearn.model_selection import StratifiedKFold
 import numpy as np
 
-root = '/home/koga/dataset/BRATS2018/Train'
+from config import TrainGlobalConfig
+
+root = TrainGlobalConfig.root_path
 # valid_data_dir = '/data2/liuxiaopeng/Data/BraTS2018/Valid'
 
 def write(data, fname, root=root):

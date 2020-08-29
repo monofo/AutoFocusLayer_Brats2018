@@ -38,8 +38,8 @@ def main():
     optimizer = optim.RMSprop(model.parameters(), TrainGlobalConfig.lr, alpha=0.9, eps=10**(-4), weight_decay=1e-4, momentum=0.6)
     criterion = nn.CrossEntropyLoss()
 
-    train_list = os.path.join("/home/koga/dataset/BRATS2018/Train", "train_0.txt")
-    valid_list = os.path.join("/home/koga/dataset/BRATS2018/Train", "valid_0.txt")
+    train_list = os.path.join(TrainGlobalConfig.root_path, "train_0.txt")
+    valid_list = os.path.join(TrainGlobalConfig.root_path, "valid_0.txt")
 
     train_dataset = BraTSDataset(
         list_file = train_list,

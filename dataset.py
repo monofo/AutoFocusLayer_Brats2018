@@ -108,10 +108,3 @@ class RandomCrop(object):
         	label = label[::flip,:,:]
 
         return {'images':torch.tensor(image.copy(), dtype=torch.float), 'labels': torch.tensor(label.copy(), dtype=torch.long)}
-
-
-
-
-if __name__ == "__main__":
-    train_list = os.path.join("/home/koga/dataset/BRATS2018/Train", "train_0.txt")
-    dataset = BraTSDataset(list_file = train_list, root="/home/koga/dataset/BRATS2018/Train")

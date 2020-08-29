@@ -29,7 +29,6 @@ def visualize_result(name, pred, args):
     # _, name1, _, name2 = name.split("/")
     # _, _, _, _, _, name3, _ = name2.split(".")
     print(name)
-    print(pred.shape)
     pred = sitk.GetImageFromArray(pred)
     sitk.WriteImage(pred, f"./result/{TrainGlobalConfig.base_dir}/" + "/VSD"+"."+ name[0] +'.mha')
     
@@ -61,7 +60,7 @@ def accuracy(pred, mask, label):
 def test(test_loader, model, args):   
     # switch to evaluate mode
     model.eval()
-    test_file = open(os.path.join("/home/koga/dataset/BRATS2018/Train", "valid_0.txt"), 'r')
+    test_file = open(os.path.join(TrainGlobalConfig.root_path, "valid_0.txt"), 'r')
     test_dir = test_file.readlines()
     # initialization      
     num_ignore = 0
@@ -141,7 +140,7 @@ def main():
     ch = torch.load(f"./result/{TrainGlobalConfig.base_dir}/last-checkpoint.bin")
     model.load_state_dict(fix_model_state_dict(ch["model_state_dict"]))
 
-    valid_list = os.path.join("/home/koga/dataset/BRATS2018/Train", "valid_0.txt")
+    valid_list = os.path.join(TrainGlobalConfig.root_path, "valid_0.txt")
     valid_dataset = BraTSDataset(
         list_file = valid_list,
         root = TrainGlobalConfig.root_path,
