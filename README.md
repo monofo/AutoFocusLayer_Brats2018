@@ -29,3 +29,15 @@ Brats2015とBrats201８ではラベルが異なるので注意してください
 
 ### テスト
 `python test.py`
+
+
+## 結果
+Todo: 図が雑なので直す
+- nii形式をgifに変更する[library](https://github.com/miykael/gif_your_nifti)
+
+flairによる教師データ  
+![flair](./src/Brats18_2013_5_1_flair.gif)  
+ground truth  
+![graund truth](./src//Brats18_2013_5_1_seg.gif)  
+prediction  
+![予測結果](./src/pred.gif)  
